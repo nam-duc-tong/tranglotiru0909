@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+        .row {
+            width: 100%;
+            height: auto;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .col-md-3 {
+            max-width: 24%;
+            background-color: #f2f2f2;
+            margin-left: 8%;
+            margin-bottom: 5px;
+            float: left;
+            height: 1475px;
+        }
+
+        .form-test {
+            flex: 0 0 calc(25.33% - 10px);
+            margin: 5px;
+            height: 330px;
+            width: 197px;
+        }
+
+        .image_scroll img {
+            width: 195px;
+            height: 240px;
+            padding: 5px;
+        }
+
+        .col-md-9 {
+            -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+            /* background-color: gray; */
+            max-width: 50%;
+            margin-left: -10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a.hotelMore {
+            cursor: pointer;
+            font-size: 0.8em;
+            border: 1px solid #fdc99a;
+            text-align: center;
+            height: 30px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        .hotelName {
+            font-size: 13px;
+        }
+
+        .hotelDescription {
+            font-size: 12px;
+        }
+
+        .hotelStars {
+            font-size: 12px;
+        }
+        .swiper-wrapper{
+            position: relative;
+            z-index: 0;
+        }
+        .swiper-slide{
+            position: absolute;
+            /* margin-left: 300px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fullsize">
+        <div class="htmlContentDiv">
+            <div class="row" style="display: flex;">
+                <div class="col-md-3">
+                    <div
+                        style="padding-top:15px;padding-bottom:15px;width:100%; display:block; overflow:hidden; background-color:#f2f2f2; text-align:center;">
+                        <h4>Tìm kiếm khách sạn</h4>
+                        <hr style="color:#d3d3d3">
+                        <input type="text" id="searchHotelInput"
+                            style="width:80%; height:35px; border:1px solid #dedede;">
+                        <button id="searchHotelBtn"
+                            style="width:80%;cursor:pointer; font-size:0.8em;border: 1px solid #fdc99a;text-align: center;height: 30px;padding: 5px; margin-top: 10px;"
+                            type="button">
+                            Tìm Kiếm
+                        </button>
+                        <button id="resetSearchBtn"
+                            style="width:80%;cursor:pointer; font-size:0.8em;border: 1px solid #fdc99a;text-align: center;height: 30px;padding: 5px; margin-top: 10px;"
+                            type="button">
+                            Tất Cả
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row" id="renderedHtml">
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <div class="swiper mySwiper">
+                                    <div class="swiper-wrapper" style="display: flex; ">
+                                        <div class="swiper-slide"><img src="./image/photos (2).webp" alt=""></div>
+                                        <div class="swiper-slide"><img src="./image/photos (3).webp" alt=""></div>
+                                        <div class="swiper-slide"><img src="./image/photos.jfif" alt=""></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="form-test" style=" background-color: aqua;">
+                            <div class="image_scroll">
+                                <img src="./image/photos (2).webp" alt="">
+                            </div>
+                            <div class="hotelName">
+                                Khách sạn Lujo Bodrum
+                            </div>
+                            <div class="hotelDescription">
+                                Guvercinlik / Bodrum / Türkiye
+                            </div>
+                            <div class="hotelStars">
+                                5* sang trọng
+                            </div>
+                            <a href="">
+                                <div class="hotelMore">
+                                    More
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+          var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1, // Số lượng slide hiển thị trên một lần trượt
+        spaceBetween: 10, // Khoảng cách giữa các slide
+        loop: true, // Lặp vô hạn qua các slide
+        autoplay: {
+            delay: 2000, // Thời gian trước khi chuyển đến slide tiếp theo (2 giây trong ví dụ này)
+        },
+        navigation: {
+            nextEl: ".swiper-button-next", // Nút chuyển đến slide tiếp theo
+            prevEl: ".swiper-button-prev", // Nút chuyển đến slide trước đó
+        },
+        pagination: {
+            el: ".swiper-pagination", // Điểm chuyển đến slide
+            clickable: true, // Cho phép chọn slide bằng điểm chuyển đến
+        },
+    });
+    </script>
+</body>
+
+</html>
